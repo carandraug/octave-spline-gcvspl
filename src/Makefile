@@ -1,9 +1,9 @@
-sinclude ./Makeconf
+MKOCTFILE ?= mkoctfile -Wall
 
 all: gcvspl.oct
 
 gcvspl.oct: gcvspl.cc gcvsplf.f
 	$(MKOCTFILE) -v gcvspl.cc gcvsplf.f
 
-clean: ; -$(RM) *.o octave-core core *.oct *~
-
+clean:
+	rm -f *.o octave-core core *.oct *~
